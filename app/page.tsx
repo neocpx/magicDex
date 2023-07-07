@@ -3,8 +3,15 @@ import { Grid } from '@/components/Grid';
 import getRandomCards from '@/lib/apiMagic';
 import { useState, useEffect } from 'react';
 
+interface Card {
+  id: string;
+  name: string;
+  imageUrl: string;
+}
+
+
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Card[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
